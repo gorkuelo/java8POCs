@@ -16,6 +16,7 @@ public class LambdaPOCTest extends TestCase {
 	private final double NUM2 = 7;
 	private final double RESULT_EXPECTED_AVERAGE = 5.5;
 	private final double RESULT_EXPECTED_MULTIPLY = 28;
+	private final double RESULT_EXPECTED_ADD = 11;
 	private LambdaPOC lambdaPOC = new LambdaPOC();
 	
 	
@@ -39,6 +40,12 @@ public class LambdaPOCTest extends TestCase {
 	public void testMultiply(){
 		double result = lambdaPOC.multiply(NUM1, NUM2);
 		assertEquals(result, RESULT_EXPECTED_MULTIPLY);
+	}
+	
+	@Test
+	public void testCodeIntoLambdaAdd(){
+		double result = lambdaPOC.codeIntoLambdaAdd(NUM1, NUM2);
+		assertEquals(result, RESULT_EXPECTED_ADD);
 	}
 
 

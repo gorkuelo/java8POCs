@@ -12,18 +12,33 @@ public class LambdaPOCTest extends TestCase {
 	private final String STRING2 = "B1";
 	private final String STRING3 = "C1";
 	private final String STRING4 = "D1";
+	private final double NUM1 = 4;
+	private final double NUM2 = 7;
+	private final double RESULT_EXPECTED_AVERAGE = 5.5;
+	private final double RESULT_EXPECTED_MULTIPLY = 28;
+	private LambdaPOC lambdaPOC = new LambdaPOC();
 	
 	
 	@Test
 	public void testSortList(){
-		LambdaPOC lambdaPOC = new LambdaPOC();
 		List<String> listString = mockedListString();
 		lambdaPOC.sortList(listString);
 		assertEquals(listString.get(0), STRING1);
 		assertEquals(listString.get(1), STRING2);
 		assertEquals(listString.get(2), STRING3);
 		assertEquals(listString.get(3), STRING4);
-		
+	}
+	
+	@Test
+	public void testAverage(){
+		double result = lambdaPOC.average(NUM1, NUM2);
+		assertEquals(result, RESULT_EXPECTED_AVERAGE);
+	}
+	
+	@Test
+	public void testMultiply(){
+		double result = lambdaPOC.multiply(NUM1, NUM2);
+		assertEquals(result, RESULT_EXPECTED_MULTIPLY);
 	}
 
 

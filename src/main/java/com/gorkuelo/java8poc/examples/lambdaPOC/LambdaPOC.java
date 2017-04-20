@@ -10,12 +10,23 @@ public class LambdaPOC {
 		Collections.sort(listString, (String s1, String s2) -> s1.compareTo(s2));
 		printSortedList(listString);
 	}
+	
+	public double average(double num1, double num2){
+		Operations operations = (double x, double y) -> (x+y)/2;
+		return operations.operation(num1, num2);
+	}
 
+	public double multiply(double num1, double num2){
+		Operations operations = (double x, double y) -> x * y;
+		return operations.operation(num1, num2);
+	}
 
 	
 	public static void main(String[] args) {
 		LambdaPOC lambdaPOC = new LambdaPOC();
 		lambdaPOC.sortList(lambdaPOC.mockListString());
+		System.out.println("Average: " + lambdaPOC.average(2, 1));
+		System.out.println("Multiply: " + lambdaPOC.multiply(2, 7));
 	}
 
 	

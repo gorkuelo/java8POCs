@@ -17,6 +17,7 @@ public class LambdaPOCTest extends TestCase {
 	private final double RESULT_EXPECTED_AVERAGE = 5.5;
 	private final double RESULT_EXPECTED_MULTIPLY = 28;
 	private final double RESULT_EXPECTED_ADD = 11;
+	private final double RESULT_EXPECTED_WITHOUT_PARAMS = 4;
 	private LambdaPOC lambdaPOC = new LambdaPOC();
 	
 	
@@ -48,6 +49,11 @@ public class LambdaPOCTest extends TestCase {
 		assertEquals(result, RESULT_EXPECTED_ADD);
 	}
 
+	@Test
+	public void testOperationWithoutParams(){
+		double result = lambdaPOC.operationWithoutParams();
+		assertEquals(result, RESULT_EXPECTED_WITHOUT_PARAMS);
+	}
 
 	private List<String> mockedListString() {
 		List<String> listString = new ArrayList<String>();

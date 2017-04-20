@@ -30,6 +30,10 @@ public class LambdaPOC {
 		return operations.operation(num1, num2);
 	}
 
+	public double operationWithoutParams(){
+		OperationsWithoutParams operationsWithoutParams = () -> 4;
+		return operationsWithoutParams.operation();
+	}
 	
 	public static void main(String[] args) {
 		LambdaPOC lambdaPOC = new LambdaPOC();
@@ -37,6 +41,7 @@ public class LambdaPOC {
 		System.out.println("Average: " + lambdaPOC.average(2, 1));
 		System.out.println("Multiply: " + lambdaPOC.multiply(2, 7));
 		System.out.println("Add: " + lambdaPOC.codeIntoLambdaAdd(10, 5));
+		System.out.println("Operation without params: " + lambdaPOC.operationWithoutParams());
 		
 	}
 

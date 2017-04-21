@@ -11,12 +11,13 @@ public class DefaultMethodsPOCTest extends TestCase{
 	
 	public DefaultMethodsPOC defaultMethodsPOC = new DefaultMethodsPOC();
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private final String CONSOLE_TEXT_EXPECTED = "Dog1 barks";
 
 	@Test
 	public void test() {
 		setUpStreams();
 		defaultMethodsPOC.bark();
-		assertEquals("Dog1 barks", outContent.toString());
+		assertEquals(CONSOLE_TEXT_EXPECTED, outContent.toString());
 	}
 	
 	private void setUpStreams() {

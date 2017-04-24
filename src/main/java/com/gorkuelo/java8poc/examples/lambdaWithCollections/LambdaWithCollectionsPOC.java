@@ -19,6 +19,12 @@ public class LambdaWithCollectionsPOC {
 		listString.removeIf(x -> x.equalsIgnoreCase(HOLA));
 		return listString;
 	}
+	
+	public List<String> sortExample(){
+		List<String> listString = getMockedListString();
+		listString.sort((x, y) -> x.compareTo(y));
+		return listString;
+	}
 	private List<String> getMockedListString() {
 		List<String> result = new ArrayList<String>();
 		result.add(HOLA);
@@ -31,6 +37,9 @@ public class LambdaWithCollectionsPOC {
 	public static void main(String[] args) {
 		LambdaWithCollectionsPOC lambdaWithCollectionsPOC = new LambdaWithCollectionsPOC();
 		lambdaWithCollectionsPOC.forEachExample();
+		lambdaWithCollectionsPOC.removeIfExample();
+		lambdaWithCollectionsPOC.sortExample();
+		
 
 	}
 

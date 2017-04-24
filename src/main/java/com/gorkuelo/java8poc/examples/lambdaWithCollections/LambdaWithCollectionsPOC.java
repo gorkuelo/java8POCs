@@ -5,6 +5,8 @@ import java.util.List;
 
 public class LambdaWithCollectionsPOC {
 	
+	private final String HOLA = "Hola";
+	
 	public List<String> forEachExample(){
 		List<String> listString = getMockedListString();
 		List<String> result = new ArrayList<String>();
@@ -12,9 +14,14 @@ public class LambdaWithCollectionsPOC {
 		return result;
 	}
 	
+	public List<String> removeIfExample(){
+		List<String> listString = getMockedListString();
+		listString.removeIf(x -> x.equalsIgnoreCase(HOLA));
+		return listString;
+	}
 	private List<String> getMockedListString() {
 		List<String> result = new ArrayList<String>();
-		result.add("Hola");
+		result.add(HOLA);
 		result.add("Adios");
 		result.add("Ey");
 		result.add("Ciao");

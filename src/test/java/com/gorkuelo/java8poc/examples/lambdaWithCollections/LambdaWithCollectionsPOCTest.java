@@ -11,11 +11,17 @@ public class LambdaWithCollectionsPOCTest {
 	private final LambdaWithCollectionsPOC lambdaWithCollectionsPOC = new LambdaWithCollectionsPOC(); 
 	
 	@Test
-	public void test() {
+	public void testForEach() {
 		List<String> forEachExample = lambdaWithCollectionsPOC.forEachExample();
 		for(String element: forEachExample){
 			assertTrue(element.charAt(element.length()-1) == '.');
 		}
+	}
+	
+	@Test
+	public void testRemoveIf() {
+		List<String> removeIfExample = lambdaWithCollectionsPOC.removeIfExample();
+		assertEquals(removeIfExample.size(), 3);	
 	}
 
 }
